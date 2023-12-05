@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200i,400&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    outline: none;
+}
+
+:root {
+    --color-primary: #f3f3f3;
+    --color-primary-green: #4d37af;
+    --color-secundary: #414142;
+    --color-secundary-blue: rgba(227, 227, 238, 0.8);
+}
+  
