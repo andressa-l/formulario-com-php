@@ -1,39 +1,38 @@
 <?php
 
-if (isset($_POST["submit"]))
-
-{
+if (isset($_POST["submit"])) {
     include_once("config.php");
 
     $nome = $_POST['name'];
     $email = $_POST['email'];
     $idade = $_POST['age'];
+    $genero = $_POST['genero'];
     $funcoes = $_POST['funcoes'];
     $favorita = $_POST['mostLike'];
-    $preferencias = $_POST['prefer'];
     $comentario = $_POST['comment'];
 
-    $dados = mysqli_query($conexao, "INSERT INTO dbForm(nome,email,idade,funcoes,mostLike,prefer,comment) VALUES ('$nome', '$email', '$idade', '$funcoes', '$favorita', '$preferencias', '$comentario')");
-}     
+    $dados = mysqli_query($conexao, "INSERT INTO dbForm(nome,email,idade,genero,funcoes,mostLike,comment) VALUES ('$nome', '$email', '$idade', '$genero', '$funcoes', '$favorita', '$comentario')");
+}
 
 ?>
 
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/6327/6327290.png">
-    <link rel="stylesheet" href="./style/form.css">
-    <link rel="stylesheet" href="./style/global.css">
+    <link rel="stylesheet" href="./css/global.css">
+    <link rel="stylesheet" href="./css/form.css">
     <title>Formulário</title>
 </head>
+
 <body>
     <div class="container">
         <header class="header">
             <h1 id="title" class="text-center">Formulário de pesquisa</h1>
-
             <p id="description" class="description text-center">Obrigado por disponibilizar seu tempo!</p>
         </header>
 
@@ -44,11 +43,22 @@ if (isset($_POST["submit"]))
             </div>
             <div class="form-parts">
                 <label id="email-label" for="email">Email</label>
-                <input id="email" type="email" class="form-button" name="email" placeholder="Digite seu email aqui" required>
+                <input id="email" type="email" class="form-button" name="email" placeholder="Digite seu email aqui"
+                    required>
             </div>
             <div class="form-parts">
                 <label id="number-label" for="number">Idade</label>
                 <input id="number" type="number" class="form-button" name="age" min="10" max="99" placeholder="Idade">
+            </div>
+            <div class="form-parts">
+                <p>Gênero</p>
+                <select id="dropdown" name="genero" class="form-button" required>
+                    <option disabled selected value>Selecionar gênero</option>
+                    <option value="feminino">Feminino</option>
+                    <option value="masculino">Masculino</option>
+                    <option value="indefinido">Indefinido</option>
+                    <option value="outro">Outro</option>
+                </select>
             </div>
             <div class="form-parts">
                 <p>Qual opção melhor descreve sua função atual?</p>
@@ -61,7 +71,7 @@ if (isset($_POST["submit"]))
                     <option value="other">Outros</option>
                 </select>
             </div>
-            
+
             <div class="form-parts">
                 <p>Qual sua área favorita de estudo como programador FullStack?</p>
 
@@ -75,21 +85,6 @@ if (isset($_POST["submit"]))
                 </select>
             </div>
             <div class="form-parts">
-                <p>Quais linguagens você possui mais afinidade? <span class="clue">(Marque todas as que se aplicam)</span></p>
-
-                <label><input name="prefer" value="front-end-projects" type="checkbox" class="input-checkbox">JavaScript</label>
-                <label><input name="prefer" value="back-end-projects" type="checkbox" class="input-checkbox">Java</label>
-                <label><input name="prefer" value="data-visualization" type="checkbox" class="input-checkbox">Python</label>
-                <label><input name="prefer" value="challenges" type="checkbox" class="input-checkbox">C++</label>
-                <label><input name="prefer" value="open-source-community" type="checkbox" class="input-checkbox">C#</label>
-                <label><input name="prefer" value="gitter-help-rooms" type="checkbox" class="input-checkbox">C</label>
-                <label><input name="prefer" value="videos" type="checkbox" class="input-checkbox">Cobol</label>
-                <label><input name="prefer" value="city-meetups" type="checkbox" class="input-checkbox">Perl</label>
-                <label><input name="prefer" value="wiki" type="checkbox" class="input-checkbox">Assembly</label>
-                <label><input name="prefer" value="forum" type="checkbox" class="input-checkbox">PHP</label>
-                <label><input name="prefer" value="additional-courses" type="checkbox" class="input-checkbox">Outras</label>
-            </div>
-            <div class="form-parts">
                 <p>O que você gostaria de aprender?</p>
                 <textarea id="comments" name="comment" class="input-textarea"
                     placeholder="Digite seu comentário aqui..."></textarea>
@@ -100,4 +95,5 @@ if (isset($_POST["submit"]))
         </form>
     </div>
 </body>
+
 </html>
