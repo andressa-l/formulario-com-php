@@ -13,6 +13,17 @@ A proposta para o desenvolvimento deste projeto foi a construção de um tela de
 - A tela de login direciona para um formuláario de pesquisa que possui uma conexão com o banco de dados.
 - Personalização de estilo: a tela de login e formulário de pesquisa fora, personalizados com fontes, cores, tamanhos e formatos de exibição.
 
+## Screenshot
+<div align="center">
+  <h3>Tela de Login</h3>
+  <img src="./image/imagem-desafio-login.gif" alt="tela de login" />
+</div>
+<div align="center">
+  <h3>Formulário</h3>
+  <img src="./image/imagem-desafio-form.gif" alt="formulário" />
+</div>
+
+
 ## Tecnologias
 <p>As seguintes ferramentas foram utilizadas na construção do projeto:</p>
 <ul>
