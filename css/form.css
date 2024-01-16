@@ -81,8 +81,6 @@ button {
   text-align: center;
 }
 
-/* formulario de pesquisa */
-
 form {
   background: var(--color-secundary-blue);
   padding: 2.5rem 0.625rem;
